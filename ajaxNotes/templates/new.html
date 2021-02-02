@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'css/notes.css' %} ">
+    <title>New note</title>
+</head>
+<body>
+    <div class="new">
+        <a href="/">Take me back</a>
+
+        <h1>Create a new note!</h1>
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title">
+        <label for="text">Text: </label>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea>
+
+        <button type="submit" id="ok">OK</button>
+
+    </div>
+
+    <!-- we are getting the csrf token. because django needs it.  -->
+    <input type="hidden" data-csrf=" {{csrf_token}} " id="data">
+
+    <script src=" {% static 'new.js' %} "></script>
+</body>
+
+</html>
